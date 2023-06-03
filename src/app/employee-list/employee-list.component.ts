@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-employee-list',
+  selector: 'employee-list',
   template: `
-  <h3>employees</h3>
+  <h2>List of Employees</h2>
+  <ol>
+    <li>Eathen Ironhorse , Job: HandyMan</li>
+    <li>Steve Vai, Job: Sue Chef </li>
+    <li>Emily Esponaja , Job: Valet Driver </li>
+    <li>Masaya Knight , Job : Manager </li>
+  </ol>
   `,
   styles: [``]
 })
