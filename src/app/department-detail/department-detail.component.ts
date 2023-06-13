@@ -7,9 +7,20 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
    <h3>
      You have selected department with id : {{departmentID}}
    </h3>
+   <!--Child Routes -->
+    <p>
+      <button (click)="gotoOverview()">Overview</button>
+      <button (click)="gotoContact()">Contact</button>
+    </p>
+    <router-outlet></router-outlet>
+
    <!--ParamMap Observables -->
-   <a (click)="goPrevious()" > Previous </a>
-   <a (click)="goNext() "> Next </a>
+   <p>
+     <!-- <a (click)="goPrevious()" > Previous </a>
+           <a (click)="goNext() "> Next </a> -->
+    <button (click)="goPrevious()" > Previous </button>
+    <button (click)="goNext() "> Next </button>
+   </p> 
 
    <div>
      <button (click)="gotoDepartments()" >Back</button>
@@ -46,6 +57,15 @@ export class DepartmentDetailComponent {
   gotoDepartments(){
     let selectedId = this.departmentID ? this.departmentID : null ;
     this.router.navigate(['/departments',{id: selectedId}]);// id = 1 optional
+  }
+
+  //Child Routes
+  gotoOverview(){
+   this.router.navigate(['overview'], {relativeTo: this.route});
+  }
+
+  gotoContact(){
+    this.router.navigate(['contact'], {relativeTo: this.route});
   }
 
 }
